@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
         'The only professional dental course recognized in India is the 5-year undergraduate BDS (Bachelor of Dental Surgery) degree Dentistry, also known as dental medicine and oral medicine, is the branch of medicine focused on the teeth, gums, and mouth',
     },
     {
-      title: 'CLINICL ROTATION',
+      title: 'CLINICAL ROTATION',
       img: '../../assets/head/course4/WhatsApp Image 2022-12-15 at 13.48.42 (1).jpeg',
       description:
         "Clinical rotations are the time medical students spend as members of a medical team so they can learn what is involved with each medical specialty. The main difference between a clinical clerkship vs internship is when you'll take it. Clerkship occurs at your last stage of medical school. Internship happens after you graduate from medical school . Clinical rotations in medical school are assigned shifts at an approved healthcare site. Once assigned to a site, students deliver supervised care individually and as a team. Tasks such as patient interviews, examinations, lab data reviews, and team discussions are common practice",

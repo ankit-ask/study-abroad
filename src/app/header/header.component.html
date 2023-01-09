@@ -3,7 +3,7 @@
     <div class="header__branding">
       <img src="../../assets/logo.jpg" alt="" />
     </div>
-    <div class="header__navigation">
+    <div class="header__navigation desktop-menu">
       <div class="header__navigation--item" (click)="goToSection('home')">
         Home
       </div>
@@ -19,6 +19,35 @@
       <div class="header__navigation--item" (click)="goToSection('contact')">
         Contact Us
       </div>
+    </div>
+    <div class="header__navigation mobile-menu" *ngIf="showMobileMenu">
+      <div class="header__navigation--item" (click)="goToSection('home')">
+        Home
+      </div>
+      <div class="header__navigation--item" (click)="goToSection('course')">
+        Courses
+      </div>
+      <div class="header__navigation--item" (click)="goToSection('about')">
+        About Us
+      </div>
+      <div class="header__navigation--item" (click)="goToSection('review')">
+        Students' Review
+      </div>
+      <div class="header__navigation--item" (click)="goToSection('contact')">
+        Contact Us
+      </div>
+    </div>
+    <div class="header__toggle">
+      <img
+        *ngIf="!showMobileMenu"
+        src="../../assets/icons/list.png"
+        (click)="toggleMenu()"
+      />
+      <img
+        *ngIf="showMobileMenu"
+        src="../../assets/icons/x.png"
+        (click)="toggleMenu()"
+      />
     </div>
   </div>
 </header>
