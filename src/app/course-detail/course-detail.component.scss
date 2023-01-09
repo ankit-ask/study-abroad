@@ -11,16 +11,19 @@
 .banner {
   &__item {
     border-radius: 16px;
+    padding: 0 32px;
+    max-height: 60vh;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.1);
     img {
       width: 100%;
+      //   border-radius: 16px;
     }
   }
 }
 
 .content {
-  padding: 64px;
+  padding: 32px;
   &__title {
     font-size: 28px;
     font-weight: 500;
@@ -28,9 +31,49 @@
   }
 }
 .form {
-  padding: 0 64px 64px;
+  padding: 0 32px 32px;
   &__title {
     font-weight: 500;
     font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 500px) {
+  .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    background: #fff;
+    border-radius: 20px;
+    padding: 8px 16px;
+  }
+  .banner {
+    &__item {
+      //   border-radius: 16px;
+      //   overflow: hidden;
+      //   box-shadow: rgba(0, 0, 0, 0.1);
+      padding: 0 8px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .content {
+    padding: 16px 8px;
+    // &__title {
+    //   font-size: 28px;
+    //   font-weight: 500;
+    //   margin-bottom: 16px;
+    // }
+  }
+  .form {
+    padding: 0 8px 16px;
+    &__title {
+      font-weight: 500;
+      font-size: 24px;
+    }
   }
 }
