@@ -1,0 +1,29 @@
+.header {
+  &__wrapper {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+  }
+  &__branding {
+    padding-left: 60px;
+    img {
+      width: 200px;
+    }
+  }
+  &__navigation {
+    display: flex;
+    &--item {
+      padding: 8px 16px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}

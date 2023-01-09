@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+// .picsum-img-wrapper {
+//   img {
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       right: 0;
+//       bottom: 0;
+//       background-color: rgba(0, 0, 0, 0.1);
+//       z-index: 9;
+//     }
+//   }
+// }
+// .carousel-control-prev,
+// .carousel-control-next {
+//   z-index: 99;
+// }
+.carousel-caption {
+  //   height: 100%;
+  //   width: 100%;
+  //   &::before {
+  //     content: "";
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     right: 0;
+  //     bottom: 0;
+  //     background-color: rgba(0, 0, 0, 0.1);
+  //     z-index: 9;
+  //   }
+  text-align: right !important;
+  top: 35% !important;
+  right: 10% !important;
+  h2 {
+    font-weight: 600;
+    font-size: 64px;
+    font-family: Playfair;
+  }
+  p {
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+  h4 {
+    font-weight: 600;
+    font-size: 32px;
+  }
+}
+.hero {
+  height: 80vh;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+.courses {
+  &__wrapper {
+    margin-top: 64px;
+    padding: 0 32px 32px;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    span {
+      font-size: 16px;
+    }
+  }
+  &__carousel {
+    &--title {
+      font-size: 20px;
+      font-weight: 500;
+      padding: 16px 0 0;
+    }
+    &--list {
+      display: flex;
+      //   flex-wrap: wrap;
+      padding: 16px 32px 16px 0;
+      overflow-x: scroll;
+    }
+    &--item {
+      width: 40%;
+      padding: 16px 32px 16px 0;
+      &-media {
+        border-radius: 16px;
+        overflow: hidden;
+        height: 300px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &-title {
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        padding: 16px 8px;
+      }
+    }
+  }
+}
+.review {
+  &__wrapper {
+    padding: 32px;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    span {
+      font-size: 16px;
+    }
+  }
+  &__carousel {
+    &--title {
+      font-size: 20px;
+      font-weight: 500;
+      padding: 16px 0 0;
+    }
+    &--list {
+      display: flex;
+      //   flex-wrap: wrap;
+      padding: 16px 32px 16px 0;
+      overflow-x: scroll;
+    }
+    &--item {
+      //   width: 40%;
+      padding: 16px 32px 16px 0;
+      &-media {
+        // border-radius: 16px;
+        overflow: hidden;
+        height: 360px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center top;
+        }
+      }
+      &-title {
+        font-size: 20px;
+        font-weight: 500;
+        padding: 16px;
+      }
+      &-text {
+        // font-size: 16px;
+        // font-weight: 500;
+        // text-align: center;
+        padding: 0 16px;
+      }
+    }
+  }
+}
+.about {
+  &__wrapper {
+    padding: 32px;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  &__action {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    span {
+      color: #0038ff;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+  &__info {
+    font-size: 16px;
+    &--title {
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+}
+.founder {
+  &__wrapper {
+    display: flex;
+    margin-top: 32px;
+  }
+  &__item {
+    padding-right: 32px;
+    &--title {
+      font-weight: 500;
+      font-size: 20px;
+    }
+    &--subtitle {
+    }
+  }
+}
+.contact {
+  &__wrapper {
+    padding: 32px;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  &__content {
+    display: flex;
+  }
+  &__team {
+    margin-top: 32px;
+    &--item {
+      margin-bottom: 16px;
+      display: flex;
+      &-media {
+        height: 160px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center center;
+        }
+      }
+      &-info {
+        padding: 16px;
+      }
+    }
+  }
+  &__address {
+    &--title {
+      font-size: 16px;
+    }
+    &--subtitle {
+      font-size: 20px;
+      font-weight: 500;
+      padding: 16px 0;
+    }
+    &--info {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    &--social {
+      &-wrapper {
+        display: flex;
+        align-items: center;
+      }
+      &-item {
+        padding: 8px 8px 8px 0;
+        cursor: pointer;
+        img {
+          width: 28px;
+        }
+      }
+    }
+  }
+}

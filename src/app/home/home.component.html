@@ -1,0 +1,280 @@
+<app-header></app-header>
+<section class="hero" id="home">
+  <ngb-carousel>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="../../assets/head/slide1.jpg" alt="" />
+      </div>
+      <div class="carousel-caption">
+        <h2>Future Students</h2>
+        <p>Education consultancy</p>
+        <h4>Study MBBS in Abroad</h4>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="../../assets/head/slide2.jpg" alt="Random second slide" />
+      </div>
+      <div class="carousel-caption">
+        <h2>Future Students</h2>
+        <p>Education consultancy</p>
+        <h4>Study MBBS in Abroad</h4>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="../../assets/head/slide3.jpg" alt="Random third slide" />
+      </div>
+      <div class="carousel-caption">
+        <h2>Future Students</h2>
+        <p>Education consultancy</p>
+        <h4>Study MBBS in Abroad</h4>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</section>
+<section class="courses" id="course">
+  <div class="courses__wrapper">
+    <div class="courses__title">
+      Courses Available
+      <span>( Courses start from 20 lakhs)</span>
+    </div>
+    <div class="courses__carousel">
+      <div class="courses__carousel--title">MBBS/MD</div>
+      <div class="courses__carousel--list">
+        <div
+          class="courses__carousel--item col-lg-5"
+          *ngFor="let course of courses"
+          (click)="openCourseDetails(course)"
+        >
+          <div class="courses__carousel--item-media">
+            <img [src]="course.img" />
+          </div>
+          <div class="courses__carousel--item-title">
+            {{ course.title }}
+          </div>
+        </div>
+        <!-- <div class="courses__carousel--item col-lg-5">
+          <div class="courses__carousel--item-media">
+            <img
+              src="../../assets/head/course2/national-cancer-institute-XknuBmnjbKg-unsplash.jpg"
+            />
+          </div>
+          <div class="courses__carousel--item-title">FORENSIC</div>
+        </div>
+        <div class="courses__carousel--item col-lg-5">
+          <div class="courses__carousel--item-media">
+            <img
+              src="../../assets/head/course3/lafayett-zapata-montero-loBRFqXm1QA-unsplash.jpg"
+            />
+          </div>
+          <div class="courses__carousel--item-title">DENTAL</div>
+        </div>
+        <div class="courses__carousel--item col-lg-5">
+          <div class="courses__carousel--item-media">
+            <img
+              src="../../assets/head/course4/WhatsApp Image 2022-12-15 at 13.48.42 (1).jpeg"
+            />
+          </div>
+          <div class="courses__carousel--item-title">CLINICL ROTATION</div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="about__wrapper">
+    <div class="about__title">About Us</div>
+    <div class="about__info">
+      Future Students Education Consultancy is the best in the field of overseas
+      education, since 2015 in Bangalore, (Other Branches in India : Indore,
+      Hyderabad, Delhi, Allahabad, Jaipur). We are dedicated to providing
+      services from admission counseling to short-listing universities to make
+      university applications, document guidance, finalizing admissions, visa/
+      study loan guidance, pre-departure briefings & more about abroad study
+      plans. We aim to provide high-quality and trustworthy guidance to the
+      students to reach the best possible academic heights based on their
+      academic and financial requirements in the best Countries.
+    </div>
+    <div class="about__action">
+      <span *ngIf="!showMore" (click)="onShowMore()">Read More</span>
+      <span *ngIf="showMore" (click)="onShowMore()">Read Less</span>
+    </div>
+    <ng-container *ngIf="showMore">
+      <div class="about__info">
+        <div class="about__info--title">MBBS in Abroad</div>
+        Our goal is to focus on <strong>MBBS in Abroad</strong> entirely and
+        helped more than thousands of medical aspirants over the year in shaping
+        the bright future. we believe in serving and timely updated every bit of
+        the medical Education. The processes we begin with application
+        assistance, so you dint find any hindrance while choosing a university.
+        We arrange everything from the start to the end and give complete
+        support concerning travel and accommodation. you will find your way to
+        make your dream come true by achieving a diversified career with full
+        options available
+      </div>
+      <div class="founder__wrapper">
+        <div class="founder__item">
+          <div class="founder__item--title">Founder</div>
+          <div class="founder__item--subtitle">Dr.Sheikh</div>
+        </div>
+        <div class="founder__item">
+          <div class="founder__item--title">Co. Founder</div>
+          <div class="founder__item--subtitle">Dr. Anam Sheikh</div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>
+<section class="review" id="review">
+  <div class="review__wrapper">
+    <div class="review__title">Students' Reviews</div>
+    <div class="review__carousel">
+      <div class="review__carousel--list">
+        <div class="review__carousel--item col-lg-5">
+          <div class="review__carousel--item-media">
+            <img
+              src="../../assets/head/student1/WhatsApp Image 2023-01-08 at 4.12.56 PM.jpeg"
+            />
+          </div>
+          <div class="review__carousel--item-title">Suhana Sheikh</div>
+          <div class="review__carousel--item-text">
+            Hello I’m studying in Kyrgyzstan. I would like suggest to everyone
+            who is planning to study abroad Future Students Education
+            Consultancy is Excellent.
+          </div>
+        </div>
+        <div class="review__carousel--item col-lg-5">
+          <div class="review__carousel--item-media">
+            <img
+              src="../../assets/head/student2/WhatsApp Image 2023-01-08 at 3.54.58 PM.jpeg"
+            />
+          </div>
+          <div class="review__carousel--item-title">Ajin Paul</div>
+          <div class="review__carousel--item-text">
+            Future Student Education Helps me a lot to get my admission in USA
+            as well as guided me to study in Worlds top University I’m glad be a
+            a part of Future Students Education Consultancy.
+          </div>
+        </div>
+        <div class="review__carousel--item col-lg-5">
+          <div class="review__carousel--item-media">
+            <img
+              src="../../assets/head/student3/WhatsApp Image 2023-01-08 at 17.39.08.jpg"
+            />
+          </div>
+          <div class="review__carousel--item-title">Sayma Mansuri</div>
+          <div class="review__carousel--item-text">
+            Happy to be a student of Future Student Education Consultancy,
+            Sheikh sir Guidance was really helpful to choose the best Medical
+            University
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="contact" id="contact">
+  <div class="contact__wrapper">
+    <div class="contact__title">Contact Us</div>
+    <div class="contact__subtitle">Management Team</div>
+    <div class="contact__content">
+      <div class="contact__team col-lg-6">
+        <div class="contact__team--item">
+          <div class="contact__team--item-media">
+            <img src="../../assets/head/manager/01.png" alt="" />
+          </div>
+          <div class="contact__team--item-info">
+            <p>Manager</p>
+            <p>Shiv Pratap Yadav</p>
+          </div>
+        </div>
+        <div class="contact__team--item">
+          <div class="contact__team--item-media">
+            <img
+              src="../../assets/head/seniorcounsellor/Mask group (1).png"
+              alt=""
+            />
+          </div>
+          <div class="contact__team--item-info">
+            <p>Manager</p>
+            <p>Shiv Pratap Yadav</p>
+          </div>
+        </div>
+        <div class="contact__team--item">
+          <div class="contact__team--item-media">
+            <img
+              src="../../assets/head/seniorcounsellor2/Mask group (2).png"
+              alt=""
+            />
+          </div>
+          <div class="contact__team--item-info">
+            <p>Manager</p>
+            <p>Shiv Pratap Yadav</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact__address col-lg-6">
+        <div class="contact__address--title">Address:</div>
+        <div class="contact__address--subtitle">Head office</div>
+        <div class="contact__address--info">
+          256, 2nd Floor, 17th cross Road,<br />
+          Sector 6, HSR Layout, Karnataka,<br />
+          India (PIN-560102)
+        </div>
+        <div class="contact__address--subtitle">Main Branch</div>
+        <div class="contact__address--info">
+          204, Anmol Tower, Greater Kailash Road,<br />
+          Ashirwad sbi Colony, old Palasia, Indore,<br />
+          M.P. India-452001
+        </div>
+        <div class="contact__address--social-wrapper">
+          <div
+            class="contact__address--social-item"
+            (click)="
+              openLink('https://www.instagram.com/mbbs_futurestudents_/')
+            "
+          >
+            <img src="../../assets/icons/instagram-logo.png" alt="" />
+          </div>
+          <div class="contact__address--social-item">
+            <a href="mailto:futurestudents599@gmail.com">
+              <img src="../../assets/icons/envelope-simple.png" alt="" />
+            </a>
+          </div>
+          <div
+            class="contact__address--social-item"
+            (click)="
+              openLink(
+                'https://www.facebook.com/mbbsfuturestudents?mibextid=LQQJ4d'
+              )
+            "
+          >
+            <img src="../../assets/icons/facebook-logo 1.png" alt="" />
+          </div>
+          <!-- <div
+            class="contact__address--social-item"
+            (click)="
+              openLink(
+                'https://www.facebook.com/mbbsfuturestudents?mibextid=LQQJ4d'
+              )
+            "
+          >
+            <img src="../../assets/icons/linkedin-logo (1).png" alt="" />
+          </div> -->
+          <div
+            class="contact__address--social-item"
+            (click)="
+              openLink(
+                'https://api.whatsapp.com/send/?phone=%2B918982930145&text=Hi%21%21+I+would+like+to+know+more+information+about+your+services&type=phone_number&app_absent=0'
+              )
+            "
+          >
+            <img src="../../assets/icons/whatsapp-logo.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <app-footer></app-footer> -->

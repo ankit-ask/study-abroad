@@ -1,0 +1,109 @@
+<!-- <app-header></app-header> -->
+<div class="modal-header">
+  <h4 class="modal-title">{{ course.title }}</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="closeModal()"
+  ></button>
+</div>
+<div class="modal-body">
+  <main>
+    <div class="banner">
+      <!-- <div class="close-btn" (click)="closeModal()">Close</div> -->
+      <div class="banner__item">
+        <img [src]="course.img" alt="" />
+      </div>
+    </div>
+    <div class="content">
+      <!-- <div class="content__title">{{ course.title }}</div> -->
+      {{ course.description }}
+    </div>
+    <div class="form">
+      <p class="form__title">Fill Form</p>
+      <div class="row">
+        <div class="col-lg-12">
+          <label>First Name</label>
+          <input type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-12">
+          <label>Last Name</label>
+          <input type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-12">
+          <label>Contact No</label>
+          <input type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-12">
+          <label>Address</label>
+          <input type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-12">
+          <label>Email</label>
+          <input type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-12">
+          <label>Gender</label>
+          <input type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-6">
+          <label>Courses</label>
+          <select class="form-control">
+            <option value="MBBS/MD">MBBS/MD</option>
+            <option value="FORENSIC">Forensic</option>
+            <option value="DENTAL">Dental</option>
+            <option value="CLINIC ROTATION">Clinic Rotation</option>
+          </select>
+        </div>
+        <div class="col-lg-6">
+          <label>Country</label>
+          <select class="form-control">
+            <optgroup value="United States of America">
+              <option
+                [value]="country.properties.name"
+                *ngFor="let country of countries"
+              >
+                {{ country.properties.name }}
+              </option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-6">
+          <label>12th Percentage</label>
+          <select class="form-control">
+            <option
+              [value]="i + 40"
+              *ngFor="let percent of [].constructor(61); index as i"
+            >
+              {{ i + 40 }}%
+            </option>
+          </select>
+        </div>
+        <div class="col-lg-6">
+          <label>NEET Score</label>
+          <input class="form-control" type="text" />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-3">
+          <button class="btn btn-primary w-100">Submit</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
