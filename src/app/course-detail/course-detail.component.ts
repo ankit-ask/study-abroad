@@ -1,5 +1,15 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from 'src/environments/environment.prod';
+import { FormErrorService } from 'src/shared/services/form-error.service';
+import { FormService } from 'src/shared/services/form.service';
 
 @Component({
   selector: 'app-course-detail',
@@ -13214,11 +13224,81 @@ export class CourseDetailComponent implements OnInit {
       id: 'ZWE',
     },
   ];
-  constructor(private modal: NgbModal) {}
+  userForm!: FormGroup;
+  constructor(
+    private _formService: FormService,
+    private modal: NgbModal,
+    private _formBuilder: FormBuilder,
+    private _formErrorService: FormErrorService,
+    private _http: HttpClient
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.buildForm();
+  }
+
+  buildForm() {
+    this.userForm = this._formBuilder.group({
+      firstName: new FormControl(null, [Validators.required]),
+      lastName: new FormControl(null, [Validators.required]),
+      contactNo: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.required]),
+      gender: new FormControl(null, [Validators.required]),
+      address: new FormControl(null, [Validators.required]),
+      course: new FormControl(null, [Validators.required]),
+      country: new FormControl(null, [Validators.required]),
+      twelfthPercentage: new FormControl(null, [Validators.required]),
+      neetScore: new FormControl(null, [Validators.required]),
+    });
+  }
 
   closeModal() {
     this.modal.dismissAll();
+  }
+
+  public getErrorMessage(fieldName: string, error: string): string {
+    return this._formErrorService.getErrorMessage(fieldName, error);
+  }
+
+  onSubmitForm() {
+    this._formService.markFormAsTouched(this.userForm);
+
+    // if (!this.userForm.valid) {
+    //   return;
+    // }
+
+    let header = new HttpHeaders({
+      accept: 'application/json',
+      'content-type': 'application/json',
+      'api-key': environment.sendInBlueAPIKEy,
+    });
+
+    this._http
+      .post(
+        environment.sendInBlueUrl,
+        {
+          sender: {
+            name: 'MBBS Abroad Studies',
+            email: 'futurestudents599@gmail.com',
+          },
+          to: [
+            { email: 'futurestudents599@gmail.com', name: 'Future Students' },
+          ],
+          subject: 'Website Enquiry Form',
+          htmlContent: `First Name - ${this.userForm.value.firstName} \n Last Name - ${this.userForm.value.lastName} \n Contact No. - ${this.userForm.value.contactNo} \n Email - ${this.userForm.value.email} \n Gender - ${this.userForm.value.gender} \n Address - ${this.userForm.value.address} \n Course - ${this.userForm.value.course} \n Country - ${this.userForm.value.country} \n Twelfth Percentage - ${this.userForm.value.twelfthPercentage} \n Neet Score - ${this.userForm.value.neetScore}`,
+        },
+        { headers: header }
+      )
+      .subscribe({
+        next: (res) => {
+          this.userForm.reset();
+          alert(
+            'Thank you for showing your interest, We will contact you ASAP'
+          );
+        },
+        error: (err) => {
+          alert(err);
+        },
+      });
   }
 }

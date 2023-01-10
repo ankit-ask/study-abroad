@@ -9,6 +9,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { HomeComponent } from './home/home.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FieldErrorsComponent } from 'src/shared/components/field-errors/field-errors.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,17 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
     FooterComponent,
     ContactFormComponent,
     HomeComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    FieldErrorsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
