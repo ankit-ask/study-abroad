@@ -13263,9 +13263,9 @@ export class CourseDetailComponent implements OnInit {
   onSubmitForm() {
     this._formService.markFormAsTouched(this.userForm);
 
-    // if (!this.userForm.valid) {
-    //   return;
-    // }
+    if (!this.userForm.valid) {
+      return;
+    }
 
     let header = new HttpHeaders({
       accept: 'application/json',
